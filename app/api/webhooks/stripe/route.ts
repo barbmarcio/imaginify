@@ -34,7 +34,9 @@ export async function POST(request: Request) {
     };
 
     const newTransaction = await createTransaction(transaction);
-    
+
+    console.log('transaction', { message: "OK", transaction: newTransaction })
+
     return NextResponse.json({ message: "OK", transaction: newTransaction });
   }
 
