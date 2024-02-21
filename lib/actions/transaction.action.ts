@@ -1,14 +1,13 @@
 "use client"
 
-import { redirect } from 'next/navigation';
 import Stripe from 'stripe'
+import Transaction from '../database/models/transaction.model';
+import { redirect } from 'next/navigation';
 import { handleError } from '../utils';
 import { connectToDatabase } from '../database/mongoose';
-import Transaction from '../database/models/transaction.model';
 import { updateCredits } from './user.actions';
 
 export async function checkoutCredits(transaction: CheckoutTransactionParams) {
-    // const STRIPE_SECRET_KEY='sk_test_51OmIkWGUu4eXnjce3pCFel2aT0hb04IWuzjkluiGFvfryTuv3Uz59Zd3Z6MXRwrS5jeKqwBBpqVBXvGWpRNzMqE100QPaT0b85'
     if (!process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY) {
         return handleError('Stripe secret key not found')
     }
@@ -48,6 +47,8 @@ export async function checkoutCredits(transaction: CheckoutTransactionParams) {
 export async function createTransaction(transaction: CreateTransactionParams) {
     try {
         await connectToDatabase();
+
+        console.log('here', { ...transaction, buyer: transaction.buyerId })
 
         const newTransaction = await Transaction.create({
             ...transaction, buyer: transaction.buyerId
