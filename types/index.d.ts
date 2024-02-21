@@ -18,20 +18,22 @@ declare type CreateUserParams = {
   };
   
   // ====== IMAGE PARAMS
+  declare type ImageParams = {
+    title: string;
+    publicId: string;
+    transformationType: string;
+    width: number;
+    height: number;
+    config: any;
+    secureURL: string;
+    transformationURL: string;
+    aspectRatio: string | undefined;
+    prompt: string | undefined;
+    color: string | undefined;
+  };
+
   declare type AddImageParams = {
-    image: {
-      title: string;
-      publicId: string;
-      transformationType: string;
-      width: number;
-      height: number;
-      config: any;
-      secureURL: string;
-      transformationURL: string;
-      aspectRatio: string | undefined;
-      prompt: string | undefined;
-      color: string | undefined;
-    };
+    image: ImageParams;
     userId: string;
     path: string;
   };
@@ -125,14 +127,4 @@ declare type CreateUserParams = {
     creditBalance: number;
     data?: IImage | null;
     config?: Transformations | null;
-  };
-  
-  declare type TransformedImageProps = {
-    image: any;
-    type: string;
-    title: string;
-    transformationConfig: Transformations | null;
-    isTransforming: boolean;
-    hasDownload?: boolean;
-    setIsTransforming?: React.Dispatch<React.SetStateAction<boolean>>;
   };
