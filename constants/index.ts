@@ -44,13 +44,13 @@ export const navLinks = [
 export const plans = [
   {
     _id: 1,
-    name: "Free",
+    name: "Starter Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 0,
-    credits: 20,
+    price: 1.99,
+    credits: 10,
     inclusions: [
       {
-        label: "20 Free Credits",
+        label: "10 Credits",
         isIncluded: true,
       },
       {
@@ -69,13 +69,38 @@ export const plans = [
   },
   {
     _id: 2,
-    name: "Pro Package",
+    name: "Basic Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 40,
-    credits: 120,
+    price: 7.99,
+    credits: 50,
     inclusions: [
       {
-        label: "120 Credits",
+        label: "50 Credits",
+        isIncluded: true,
+      },
+      {
+        label: "Basic Access to Services",
+        isIncluded: true,
+      },
+      {
+        label: "Priority Customer Support",
+        isIncluded: true,
+      },
+      {
+        label: "Priority Updates",
+        isIncluded: false,
+      },
+    ],
+  },
+  {
+    _id: 3,
+    name: "Pro Package",
+    icon: "/assets/icons/free-plan.svg",
+    price: 19.99,
+    credits: 200,
+    inclusions: [
+      {
+        label: "200 Credits",
         isIncluded: true,
       },
       {
@@ -93,14 +118,39 @@ export const plans = [
     ],
   },
   {
-    _id: 3,
+    _id: 4,
     name: "Premium Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 199,
-    credits: 2000,
+    price: 49.99,
+    credits: 500,
     inclusions: [
       {
-        label: "2000 Credits",
+        label: "500 Credits",
+        isIncluded: true,
+      },
+      {
+        label: "Full Access to Services",
+        isIncluded: true,
+      },
+      {
+        label: "Priority Customer Support",
+        isIncluded: true,
+      },
+      {
+        label: "Priority Updates",
+        isIncluded: true,
+      },
+    ],
+  },
+  {
+    _id: 4,
+    name: "Enterprise Package",
+    icon: "/assets/icons/free-plan.svg",
+    price: 199.99,
+    credits: 99999,
+    inclusions: [
+      {
+        label: "Unlimited Credits",
         isIncluded: true,
       },
       {

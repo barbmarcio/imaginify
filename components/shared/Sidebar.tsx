@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { Button } from "../ui/button";
+import logo from "../../public/logo.png";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -13,12 +14,7 @@ const Sidebar = () => {
     <aside className="sidebar">
       <div className="flex size-full flex-col gap-4">
         <Link href="/" className="sidebar-logo">
-          <Image
-            src="/assets/images/logo-text.svg"
-            alt="Logo"
-            width={180}
-            height={28}
-          />
+          <Image src={logo} alt="Logo" width={180} height={28} />
         </Link>
 
         <nav className="sidebar-nav">
@@ -31,9 +27,7 @@ const Sidebar = () => {
                   <li
                     key={link.route}
                     className={`sidebar-nav_element group ${
-                      isActive
-                        ? "bg-purple-gradient text-white"
-                        : "text-gray-700"
+                      isActive ? "bg-green-400 text-green-950" : "text-gray-950"
                     }`}
                   >
                     <Link className="sidebar-link" href={link.route}>
@@ -60,7 +54,7 @@ const Sidebar = () => {
                     key={link.route}
                     className={`sidebar-nav_element group ${
                       isActive
-                        ? "bg-purple-gradient text-white"
+                        ? "bg-green-gradient text-white"
                         : "text-gray-700"
                     }`}
                   >
@@ -85,7 +79,7 @@ const Sidebar = () => {
           </SignedIn>
 
           <SignedOut>
-            <Button asChild className="button bg-purple-gradient bg-cover">
+            <Button asChild className="button bg-green-gradient bg-cover">
               <Link href="/sign-in">Login</Link>
             </Button>
           </SignedOut>

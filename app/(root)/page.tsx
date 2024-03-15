@@ -19,12 +19,20 @@ const Home = async ({ searchParams }: SearchParamProps) => {
             <Link
               key={link.route}
               href={link.route}
-              className="flex-center flex-col gap-2"
+              className="group flex-center flex-col gap-2"
             >
-              <li className="flex-center w-fit rounded-full bg-white p-4">
-                <Image src={link.icon} alt="Image" width={24} height={24} />
+              <li className="flex-center w-fit rounded-md bg-white p-4 group-hover:bg-green-800 transition-all">
+                <Image
+                  src={link.icon}
+                  className="group-hover:brightness-200"
+                  alt="Image"
+                  width={24}
+                  height={24}
+                />
               </li>
-              <p className="p-14-medium text-center text-white">{link.label}</p>
+              <p className="p-14-medium text-center text-green-900">
+                {link.label}
+              </p>
             </Link>
           ))}
         </ul>
