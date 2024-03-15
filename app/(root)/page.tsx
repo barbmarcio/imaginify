@@ -12,7 +12,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
     <>
       <section className="home">
         <h1 className="home-heading">
-          Unleash Your Creative Vision with Imaginify
+          Unleash Your Creative Vision with picGenius
         </h1>
         <ul className="flex-center w-full gap-20">
           {navLinks.slice(1, 6).map((link) => (
